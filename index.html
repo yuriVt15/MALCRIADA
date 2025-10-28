@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MALCRIADA</title>
   <style>
-    /* CONFIGURACIÓN GENERAL */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('Pagina web/Bienvenido.jpg');
+      background-image: url('pagina_web/bienvenido.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -24,7 +23,6 @@
       text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
 
-    /* BARRA SUPERIOR */
     .navbar {
       display: flex;
       justify-content: center;
@@ -47,15 +45,9 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
-    .nav-btn:hover {
-      transform: scale(1.08);
-    }
+    .nav-btn:hover { transform: scale(1.08); }
+    .nav-btn.activo { transform: scale(1.05); }
 
-    .nav-btn.activo {
-      transform: scale(1.05);
-    }
-
-    /* CONTENIDO CENTRAL */
     .content {
       flex: 1;
       display: flex;
@@ -65,26 +57,15 @@
       gap: 20px;
     }
 
-    /* ANIMACIONES DE FLOTAR */
     @keyframes flotar {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-10px); }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
 
-    .flotante {
-      animation: flotar 4s ease-in-out infinite;
-    }
-
-    .flotante-desfase {
-      animation: flotar 4s ease-in-out infinite;
-      animation-delay: 2s;
-    }
-
-    .logo-bien {
-      width: 600px;
-      max-width: 90%;
-    }
+    .flotante { animation: flotar 4s ease-in-out infinite; }
+    .flotante-desfase { animation: flotar 4s ease-in-out infinite; animation-delay: 2s; }
+    .logo-bien { width: 600px; max-width: 90%; }
 
     .content img:not(.logo-bien) {
       width: 280px;
@@ -94,9 +75,7 @@
       transition: transform 0.3s;
     }
 
-    .content img:not(.logo-bien):hover {
-      transform: scale(1.08);
-    }
+    .content img:not(.logo-bien):hover { transform: scale(1.08); }
 
     .info-container {
       display: flex;
@@ -106,10 +85,7 @@
       flex-wrap: wrap;
     }
 
-    .info-container img {
-      width: 300px;
-      height: auto;
-    }
+    .info-container img { width: 300px; height: auto; }
 
     .info-texto {
       font-size: 28px;
@@ -127,7 +103,6 @@
       text-shadow: 0 3px 6px rgba(0,0,0,0.8);
     }
 
-    /* EFECTO DE RUIDO */
     .ruido {
       position: fixed;
       top: 0;
@@ -143,31 +118,27 @@
   </style>
 </head>
 <body>
-  <!-- Barra de navegación -->
   <div class="navbar">
-    <img src="Pagina web/casa.png" id="btnCasa" class="nav-btn" onclick="mostrar('casa')" alt="Casa">
+    <img src="pagina_web/casa.png" id="btnCasa" class="nav-btn" onclick="mostrar('casa')" alt="Casa">
     <div style="width:100px;"></div>
-    <img src="Pagina web/info.png" id="btnInfo" class="nav-btn" onclick="mostrar('info')" alt="Info">
+    <img src="pagina_web/info.png" id="btnInfo" class="nav-btn" onclick="mostrar('info')" alt="Info">
     <div style="width:100px;"></div>
-    <img src="Pagina web/musica.png" id="btnMusica" class="nav-btn" onclick="mostrar('musica')" alt="Música">
+    <img src="pagina_web/musica.png" id="btnMusica" class="nav-btn" onclick="mostrar('musica')" alt="Música">
     <div style="width:100px;"></div>
-    <img src="Pagina web/redes.png" id="btnRedes" class="nav-btn" onclick="mostrar('redes')" alt="Redes">
+    <img src="pagina_web/redes.png" id="btnRedes" class="nav-btn" onclick="mostrar('redes')" alt="Redes">
   </div>
   
-  <!-- Contenido dinámico -->
   <div class="content" id="contenido">
-    <img src="Pagina web/bien logo.png" alt="Bienvenido" class="logo-bien flotante">
+    <img src="pagina_web/bien_logo.png" alt="Bienvenido" class="logo-bien flotante">
   </div>
 
   <div class="ruido"></div>
 
   <script>
-    // Función para capitalizar texto
     function capitalizar(texto) {
       return texto.charAt(0).toUpperCase() + texto.slice(1);
     }
 
-    // Función principal para mostrar secciones
     function mostrar(seccion) {
       const cont = document.getElementById("contenido");
       const botones = document.querySelectorAll(".nav-btn");
@@ -176,29 +147,27 @@
       if (botonActivo) botonActivo.classList.add("activo");
 
       if (seccion === "casa") {
-        document.body.style.backgroundImage = "url('Pagina web/Bienvenido.jpg')";
-        cont.innerHTML = `<img src="Pagina web/bien logo.png" alt="Bienvenido" class="logo-bien flotante">`;
+        document.body.style.backgroundImage = "url('pagina_web/bienvenido.jpg')";
+        cont.innerHTML = `<img src="pagina_web/bien_logo.png" alt="Bienvenido" class="logo-bien flotante">`;
       } 
-else if (seccion === "info") {
-  document.body.style.backgroundImage = "url('Pagina web/Fondo 2.jpg')";
-  cont.innerHTML = `
-  <div>
-    <h1>¿¡DE QUIÉN QUIERES SABER INFORMACIÓN!?</h1>
-    <div>
-      <img src="Pagina web/pepe1.png" alt="Pepe" class="flotante" onclick="mostrar('pepe')">
-      <img src="Pagina web/katy1.png" alt="Katy" class="flotante-desfase" onclick="mostrar('katy')" style="margin-left:120px;">
-    </div>
-  </div>
-  `;
-
+      else if (seccion === "info") {
+        document.body.style.backgroundImage = "url('pagina_web/fondo2.jpg')";
+        cont.innerHTML = `
+        <div>
+          <h1>¿¡DE QUIÉN QUIERES SABER INFORMACIÓN!?</h1>
+          <div>
+            <img src="pagina_web/pepe1.png" alt="Pepe" class="flotante" onclick="mostrar('pepe')">
+            <img src="pagina_web/katy1.png" alt="Katy" class="flotante-desfase" onclick="mostrar('katy')" style="margin-left:120px;">
+          </div>
+        </div>`;
       } 
       else if (seccion === "pepe") {
-        document.body.style.backgroundImage = "url('Pagina web/fondo 5.jpg')";
+        document.body.style.backgroundImage = "url('pagina_web/fondo5.jpg')";
         cont.innerHTML = `
           <div class="info-container">
-            <img src="Pagina web/peter.png" alt="Peter">
+            <img src="pagina_web/peter.png" alt="Peter">
             <div class="info-texto">
-              Peter, personaje de Malcriada.music
+            Peter, personaje de Malcriada.music
               Es tímido, no tiene amigos, su mayor bully es Katy, su compañera. Juntos son vistos en diferentes ocasiones.
             A Peter le gustan los espaguetis y los gatitos. Su música favorita es "It's OK to Cry" ya que siente que realmente necesita llorar más seguido. Sus padres son amorosos, ellos .̵̤͔̣̖̫̦̜̞̼̲̯̒͗͛.̶̳͒̊̀̎́͂̏͠.̶̛̛̘̚͠.̶̹̝̻͚̬̫͔͛̏͋̔̑͐̑̉͗͑͘͠.̷̼͉̞̗̖͎͇̹̍̅͗͂̓̏͒̕.̶̨̗͚͖̣̥̪͕̽̐̕.̴̭̠̳̘̱̼͖̗͐͌̌͘͠.̸̨̮͓̱̠͖̺̺̻͚̿́̋̋͑̈͊͊̀̊̚͝.̶̺̰̭̼̦͖̻̱̣̀̑̀̏.̸̢̛͙̟̼͇͙͈͑͛͆̓.̷̧̰͚̫͙͍̥̱͍͊̆̔͋̈̐̓͋̃͒̇̚.̶͉̹̗͚̄̆̈́͋͘͝.̷̯̹̻̫͓͉̩̑̈́͊̍͑͆̀͠.̶̡̢̞̖̘̕.̴̩̝͓̰̭̗͍͎̘̺̊͊́͆.̷̧̛͉͓͇̮̥̤̠̣̞̇͋͒̚͜.̷͙͔́̅̿̆̑̉̚͝.̵̛̭̮̼̜͕̀͂͌̀̀̑͒̽̓̚
             
@@ -208,57 +177,50 @@ else if (seccion === "info") {
             Dato random: Le gusta tocar la guitarra, y siempre se le rompe sus cuerdas
 
             </div>
-          </div>
-        `;
+          </div>`;
       }
       else if (seccion === "katy") {
-        document.body.style.backgroundImage = "url('Pagina web/fondo 6.jpg')";
+        document.body.style.backgroundImage = "url('pagina_web/fondo6.jpg')";
         cont.innerHTML = `
           <div class="info-container">
-            <img src="Pagina web/katy.png" alt="Katy">
+            <img src="pagina_web/katy.png" alt="Katy">
             <div class="info-texto">
-Katy, uno de los personajes de Malcriada.music.<br> Es ruda, grosera, su estilo de musica favorito es el metal y el punk, su comida favorita son los pastes!, su madre suele llevar algunos a casa cuando no esta .̸̟͎͕͑.̶̨̛̻̬̱͗̔.̸̢̬̰̰͇͔̞́̅̊̎̈́͂͂͗̾̏ͅ.̴̻̳̖̦͇̦̼̣͠.̵̰̈́͒͂̾̌͆̄̑̕͝.̵̡̛̯͇͚̰̬̰͊̉͐̾̽̀͜ͅ.̸̢̣̳̩̰̞̰̳̼̉̔͐̔̉̌̐͆͊͝͠.̶̨̣̠͉͈̙̯̤̀̊͑̓́͂̔̇͝͝ͅ.̵̣̱̈́͆̾̑̍̇͑̈́̊̓̚.̶̨̪̮̄͋̄́͋̈́͒͝ Su musica favortia es "Keroseno", le gusta quemar cosas aveces, es su pasatiempo favorito Dato random: le regalo un gato a una amiga, y al rato desaparecio
+                <img src="Pagina web/katy.png" alt="Katy">
+            <div class="info-texto">
+            Katy, uno de los personajes de Malcriada.music.<br> Es ruda, grosera, su estilo de musica favorito es el metal y el punk, su comida favorita son los pastes!, su madre suele llevar algunos a casa cuando no esta .̸̟͎͕͑.̶̨̛̻̬̱͗̔.̸̢̬̰̰͇͔̞́̅̊̎̈́͂͂͗̾̏ͅ.̴̻̳̖̦͇̦̼̣͠.̵̰̈́͒͂̾̌͆̄̑̕͝.̵̡̛̯͇͚̰̬̰͊̉͐̾̽̀͜ͅ.̸̢̣̳̩̰̞̰̳̼̉̔͐̔̉̌̐͆͊͝͠.̶̨̣̠͉͈̙̯̤̀̊͑̓́͂̔̇͝͝ͅ.̵̣̱̈́͆̾̑̍̇͑̈́̊̓̚.̶̨̪̮̄͋̄́͋̈́͒͝ Su musica favortia es "Keroseno", le gusta quemar cosas aveces, es su pasatiempo favorito Dato random: le regalo un gato a una amiga, y al rato desaparecio
             </div>
-          </div>
-        `;
+          </div>`;
       }
       else if (seccion === "musica") {
-        document.body.style.backgroundImage = "url('Pagina web/Fondo 3.jpg')";
+        document.body.style.backgroundImage = "url('pagina_web/fondo3.jpg')";
         cont.innerHTML = `
           <div style="text-align:center;">
-            <h1> Música</h1>
+            <h1>Música</h1>
             <div id="carrusel">
               <button id="anterior">⬅️</button>
-              <img id="portada" src="Pagina web/ventana 1.png" width="300">
+              <img id="portada" src="pagina_web/ventana1.png" width="300">
               <button id="siguiente">➡️</button>
             </div>
             <p id="nombreCancion" style="font-size:25px; cursor:pointer; text-decoration:underline;">Do something!</p>
-          </div>
-        `;
+          </div>`;
         inicializarCarrusel();
       }
       else if (seccion === "redes") {
-        document.body.style.backgroundImage = "url('Pagina web/Fondo 4.jpg')";
-        cont.innerHTML = `
-          <div>
-            <h1>AQUI AUN FALTA</h1>
-          </div>
-        `;
+        document.body.style.backgroundImage = "url('pagina_web/fondo4.jpg')";
+        cont.innerHTML = `<div><h1>AQUI AUN FALTA</h1></div>`;
       }
     }
 
-    // Carrusel musical
     function inicializarCarrusel() {
       const canciones = [
-        { nombre: "Do Shomething!", portada: "Pagina web/ventana 1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
-        { nombre: "K.O.", portada: "Pagina web/ventana 2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
-        { nombre: "LoveSong (Cover)", portada: "Pagina web/ventana 3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
-        { nombre: "Mision S******", portada: "Pagina web/ventana 4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
-        { nombre: "No Puedo Más!", portada: "Pagina web/ventana 5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
-        { nombre: "No Me Quiero Morir", portada: "Pagina web/ventana 6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
-        { nombre: "Momento (Ft Prayers)", portada: "Pagina web/ventana 7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
-        { nombre: "AAAA", portada: "Pagina web/ventana 8.png", link: "hhttps://www.youtube.com/watch?v=rJDH-wszLvs" }
-        
+        { nombre: "Do Something!", portada: "pagina_web/ventana1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
+        { nombre: "K.O.", portada: "pagina_web/ventana2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
+        { nombre: "LoveSong (Cover)", portada: "pagina_web/ventana3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
+        { nombre: "Mision S******", portada: "pagina_web/ventana4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
+        { nombre: "No Puedo Más!", portada: "pagina_web/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
+        { nombre: "No Me Quiero Morir", portada: "pagina_web/ventana6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
+        { nombre: "Momento (Ft Prayers)", portada: "pagina_web/ventana7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
+        { nombre: "AAAA", portada: "pagina_web/ventana8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
       ];
 
       let i = 0;
@@ -277,12 +239,11 @@ Katy, uno de los personajes de Malcriada.music.<br> Es ruda, grosera, su estilo 
       nombre.onclick = () => window.open(canciones[i].link, "_blank");
     }
 
-    // Efecto de ruido animado
     const imagenesRuido = [
-      'Pagina web/ruido.png',
-      'Pagina web/ruido2.png',
-      'Pagina web/ruido3.png',
-      'Pagina web/ruido4.png'
+      'pagina_web/ruido.png',
+      'pagina_web/ruido2.png',
+      'pagina_web/ruido3.png',
+      'pagina_web/ruido4.png'
     ];
     const ruidoDiv = document.querySelector('.ruido');
     let ruidoIndex = 0;
