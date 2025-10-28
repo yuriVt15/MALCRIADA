@@ -129,7 +129,7 @@
   </div>
   
   <div class="content" id="contenido">
-    <img src="pagina web/bien logo.png" alt="Bienvenido" class="logo-bien flotante">
+    <img src="pagina web/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">
   </div>
 
   <div class="ruido"></div>
@@ -148,10 +148,10 @@
 
       if (seccion === "casa") {
         document.body.style.backgroundImage = "url('pagina web/bienvenido.jpg')";
-        cont.innerHTML = `<img src="pagina web/bien logo.png" alt="Bienvenido" class="logo-bien flotante">`;
+        cont.innerHTML = `<img src="pagina web/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">`;
       } 
       else if (seccion === "info") {
-        document.body.style.backgroundImage = "url('pagina web/fondo 2.jpg')";
+        document.body.style.backgroundImage = "url('pagina web/fondo2.jpg')";
         cont.innerHTML = `
         <div>
           <h1>¿¡DE QUIÉN QUIERES SABER INFORMACIÓN!?</h1>
@@ -162,7 +162,7 @@
         </div>`;
       } 
       else if (seccion === "pepe") {
-        document.body.style.backgroundImage = "url('pagina web/fondo 5.jpg')";
+        document.body.style.backgroundImage = "url('pagina web/fondo5.jpg')";
         cont.innerHTML = `
           <div class="info-container">
             <img src="pagina web/peter.png" alt="Peter">
@@ -180,7 +180,7 @@
           </div>`;
       }
       else if (seccion === "katy") {
-        document.body.style.backgroundImage = "url('pagina web/fondo 6.jpg')";
+        document.body.style.backgroundImage = "url('pagina web/fondo6.jpg')";
         cont.innerHTML = `
           <div class="info-container">
             <img src="pagina web/katy.png" alt="Katy">
@@ -190,13 +190,13 @@
           </div>`;
       }
       else if (seccion === "musica") {
-        document.body.style.backgroundImage = "url('pagina web/fondo 3.jpg')";
+        document.body.style.backgroundImage = "url('pagina web/fondo3.jpg')";
         cont.innerHTML = `
           <div style="text-align:center;">
             <h1>Música</h1>
             <div id="carrusel">
               <button id="anterior">⬅️</button>
-              <img id="portada" src="pagina web/ventana 1.png" width="300">
+              <img id="portada" src="pagina web/ventana1.png" width="300">
               <button id="siguiente">➡️</button>
             </div>
             <p id="nombreCancion" style="font-size:25px; cursor:pointer; text-decoration:underline;">Do something!</p>
@@ -204,21 +204,21 @@
         inicializarCarrusel();
       }
       else if (seccion === "redes") {
-        document.body.style.backgroundImage = "url('pagina web/fondo 4.jpg')";
+        document.body.style.backgroundImage = "url('pagina web/fondo4.jpg')";
         cont.innerHTML = `<div><h1>AQUI AUN FALTA</h1></div>`;
       }
     }
 
     function inicializarCarrusel() {
       const canciones = [
-        { nombre: "Do Something!", portada: "pagina web/ventana 1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
-        { nombre: "K.O.", portada: "pagina web/ventana 2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
-        { nombre: "LoveSong (Cover)", portada: "pagina web/ventana 3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
-        { nombre: "Mision S******", portada: "pagina web/ventana 4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
-        { nombre: "No Puedo Más!", portada: "pagina web/ventana 5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
-        { nombre: "No Me Quiero Morir", portada: "pagina web/ventana 6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
-        { nombre: "Momento (Ft Prayers)", portada: "pagina web/ventana 7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
-        { nombre: "AAAA", portada: "pagina web/ventana 8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
+        { nombre: "Do Something!", portada: "pagina web/ventana1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
+        { nombre: "K.O.", portada: "pagina web/ventana2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
+        { nombre: "LoveSong (Cover)", portada: "pagina web/ventana3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
+        { nombre: "Mision S******", portada: "pagina web/ventana4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
+        { nombre: "No Puedo Más!", portada: "pagina web/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
+        { nombre: "No Me Quiero Morir", portada: "pagina web/ventana6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
+        { nombre: "Momento (Ft Prayers)", portada: "pagina web/ventana7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
+        { nombre: "AAAA", portada: "pagina web/ventana8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
       ];
 
       let i = 0;
